@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--기본 배경-->
+    <item android:id="@+id/background"
+        android:drawable="@drawable/start_off"/>
+<!--별점을 조절 중일 때 보여 줄 이미지-->
+    <item android:id="@+id/secondaryProgress"
+        android:drawable="@drawable/start_off"/>
+<!--채워 진 부분    -->
+    <item android:id="@+id/progress"
+        android:drawable="@drawable/star_on"/>
+</layer-list>

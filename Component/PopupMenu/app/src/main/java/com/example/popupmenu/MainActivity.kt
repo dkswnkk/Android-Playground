@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
                     R.id.item1->{
                         binding.textView.text="1"
                     }
-                    R.id.item2->{
+                    R. id.item2->{
                         binding.textView.text ="2"
                     }
                     R.id.item3->{

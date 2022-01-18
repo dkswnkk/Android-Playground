@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="ACTIVITY종료(OK)">
+
+    <TextView
+        android:id="@+id/thirdTextView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/thirdButton1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ACTIVITY종료(OK)" />
+
+    <Button
+        android:id="@+id/thirdButton2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ACTIVITY종료(CANCLE)" />
+
+    <Button
+        android:id="@+id/thirdButton3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ACTIVITY종료(USER)" />
+
+    <Button
+        android:id="@+id/thirdButton4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ACTIVITY종료(USER2)" />
+</LinearLayout>

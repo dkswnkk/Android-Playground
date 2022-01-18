@@ -1,13 +1,14 @@
-package com.example.startactivity
+package com.example.onactivityresult
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.startactivity.databinding.ActivitySecondBinding
+import com.example.onactivityresult.databinding.ActivitySecondBinding
 
-class   SecondActivity : AppCompatActivity() {
+
+class SecondActivity : AppCompatActivity() {
     lateinit var binding: ActivitySecondBinding
-    override fun onCreate(savedInstanceState:  Bundle?) {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
@@ -16,8 +17,8 @@ class   SecondActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.secondButton1.setOnClickListener {
-//             startActivity(Intent(this,MainActivity::class.java))
             finish()
         }
+
     }
 }

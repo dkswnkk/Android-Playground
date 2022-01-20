@@ -18,7 +18,7 @@ class SecondActivity : AppCompatActivity() {
 
         val obj1 = intent.getParcelableExtra<TestClass>("data1")
 
-        
+
         binding.secondButton1.setOnClickListener {
             Log.d("test1","${obj1!!.data1}")
             finish()

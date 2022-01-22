@@ -88,7 +88,7 @@ class MainActivity : AppCompatActivity() {
                 override fun onShown(transientBottomBar: Snackbar?) {
                     super.onShown(transientBottomBar)
                     Log.d("ZZ","?")
-                 
+
                 }
             }
             snackBar.addCallback(callback)

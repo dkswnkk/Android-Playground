@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
             val notification = builder1.build()
             val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             manager.notify(10, notification)
-            
+
         }
         binding.button2.setOnClickListener {
 

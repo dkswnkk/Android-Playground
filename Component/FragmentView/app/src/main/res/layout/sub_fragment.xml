@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/frag_text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <Button
+        android:id="@+id/frag_button1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Fragment에 값 셋팅" />
+
+    <Button
+        android:id="@+id/frag_button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Activity 겂 새팅" />
+</LinearLayout>

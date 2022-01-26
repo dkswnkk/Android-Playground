@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
             val binder = p1 as TestService.LocalBinder
             ipcService = binder.getService()
         }
+
         // 서비스 접속을 해제했을
         override fun onServiceDisconnected(p0: ComponentName?) {
             ipcService = null
@@ -50,12 +51,12 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // 서비스에 접속한다.
-        bindService(serviceIntent,connection,Context.BIND_AUTO_CREATE)
+        bindService(serviceIntent, connection, Context.BIND_AUTO_CREATE)
 
 
         binding.button.setOnClickListener {
             var value = ipcService?.getNumber()
-            binding.textView.text= "${value}"
+            binding.textView.text = "${value}"
         }
     }
 

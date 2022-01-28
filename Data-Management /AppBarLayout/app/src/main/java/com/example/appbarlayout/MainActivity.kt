@@ -25,5 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding.toolbarLayout.expandedTitleGravity = Gravity.CENTER_VERTICAL
 
         binding.imageView.setImageResource(R.drawable.imgflag8)
+        supportActionBar?.setTitle("zz")
     }
 }

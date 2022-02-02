@@ -91,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             val sql = "delete from TestTable where idx = ?"
             val arg1 = arrayOf("1")
 
-            helper.writableDatabase.execSQL(sql,arg1)
+            helper.writableDatabase.execSQL(sql ,arg1)
             helper.writableDatabase.close()
 
             binding.textView.text = "삭제 완료"

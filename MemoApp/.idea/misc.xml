@@ -6,7 +6,9 @@
         <entry key="app/src/main/res/drawable/splash.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/splash_image.xml" value="0.12760416666666666" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21574074074074073" />
-        <entry key="app/src/main/res/layout/activity_memo_add.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_memo_add.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/add_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/add_menu_write.xml" value="0.25" />
         <entry key="app/src/main/res/menu/main_menu.xml" value="0.1" />
       </map>
     </option>
@@ -16,5 +18,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
   </component>
 </project>

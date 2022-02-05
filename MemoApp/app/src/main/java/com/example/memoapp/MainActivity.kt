@@ -5,9 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.SystemClock
 import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.ViewGroup
+import android.view.*
+import android.widget.AdapterView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.memoapp.databinding.ActivityMainBinding
@@ -90,9 +89,22 @@ class MainActivity : AppCompatActivity() {
     // RecyclerView의 어댑터
     inner class MainRecyclerAdapter : RecyclerView.Adapter<MainRecyclerAdapter.ViewHolderClass>() {
 
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderClass {
             val mainReCyclerBinding = MainRecyclerRowBinding.inflate(layoutInflater)
             val holder = ViewHolderClass(mainReCyclerBinding)
+
+            //https://velog.io/@yxnsx/Android-recyclerView-%EC%95%84%EC%9D%B4%ED%85%9C-MATCHPARENT-%EB%8F%99%EC%A0%81-%EC%84%A4%EC%A0%95
+            // 생성 되는 항목 View의 가로 세로 길이를 설정한다.
+            val layoutParams = RecyclerView.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT,
+            )
+
+            mainReCyclerBinding.root.layoutParams = layoutParams
+            // 항복 View에 이벤트를 설정한다.
+            mainReCyclerBinding.root.setOnClickListener(holder)
+
             return holder
         }
 
@@ -107,10 +119,17 @@ class MainActivity : AppCompatActivity() {
 
         // HolderClass
         inner class ViewHolderClass(mainReCyclerBinding: MainRecyclerRowBinding) :
-            RecyclerView.ViewHolder(mainReCyclerBinding.root) {
+            RecyclerView.ViewHolder(mainReCyclerBinding.root), View.OnClickListener {
             // View의 주소값을 담는다.
             val rowMemoSubject = mainReCyclerBinding.memoSubject
             val rowMemoDate = mainReCyclerBinding.memoDate
+
+            override fun onClick(p0: View?) {
+//                Log.d("test", "$adapterPosition")
+
+                val memoReadActivity = Intent(baseContext, MemoReadActivity::class.java)
+                startActivity(memoReadActivity)
+            }
         }
     }
 }

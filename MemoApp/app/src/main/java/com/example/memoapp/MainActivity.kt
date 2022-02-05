@@ -15,5 +15,8 @@ class MainActivity : AppCompatActivity() {
         setTheme(R.style.Theme_MemoApp)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val helper = DBHelper(this).writableDatabase.close()
+
     }
 }

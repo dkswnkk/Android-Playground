@@ -13,6 +13,7 @@ import java.util.*
 
 class MemoAddActivity : AppCompatActivity() {
     lateinit var binding: ActivityMemoAddBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMemoAddBinding.inflate(layoutInflater)
@@ -36,9 +37,8 @@ class MemoAddActivity : AppCompatActivity() {
                 imm.showSoftInput(binding.addMemoSubject, InputMethodManager.SHOW_IMPLICIT)
             }
         }.start()
-
-
     }
+
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.add_menu, menu)
@@ -66,7 +66,7 @@ class MemoAddActivity : AppCompatActivity() {
                 // 현재 시간
                 val now = System.currentTimeMillis()
                 val sdf =
-                    SimpleDateFormat("yyyy-MM-dd,HH:mm", Locale.KOREAN).format(now).format(Date())
+                    SimpleDateFormat("yyyy-MM-dd, HH:mm", Locale.KOREAN).format(now).format(Date())
 
 
                 // ? 값 셋팅

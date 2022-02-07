@@ -52,7 +52,7 @@ class MemoAddActivity : AppCompatActivity() {
             }
             R.id.add_menu_write -> {
                 val memo_subject = binding.addMemoSubject.text
-                val memo_text = binding.addMemoText
+                val memo_text = binding.addMemoText.text
 
                 // query
                 val sql = """

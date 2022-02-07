@@ -17,6 +17,7 @@ class MainActivity : AppCompatActivity() {
 
     val subject_list = ArrayList<String>()
     val date_list = ArrayList<String>()
+    val idx_list = ArrayList<Int>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,11 +62,12 @@ class MainActivity : AppCompatActivity() {
 
         subject_list.clear()
         date_list.clear()
+        idx_list.clear()
 
         // 데이터 베이스 오픈
         val helper = DBHelper(this)
         val sql = """
-            select memo_subject, memo_date
+            select memo_subject, memo_date, memo_idx
             from MemoTable
             order by memo_idx desc
         """.trimIndent()
@@ -75,11 +77,15 @@ class MainActivity : AppCompatActivity() {
         while (c1.moveToNext()) {
             val idx1 = c1.getColumnIndex("memo_subject")
             val idx2 = c1.getColumnIndex("memo_date")
+            val idx3 = c1.getColumnIndex("memo_idx")
+
             val memo_subject = c1.getString(idx1)
             val memo_date = c1.getString(idx2)
+            val memo_idx = c1.getInt(idx3)
 
             subject_list.add(memo_subject)
             date_list.add(memo_date)
+            idx_list.add(memo_idx)
 
             // RecyclerView 갱신
             binding.mainRecycler.adapter?.notifyDataSetChanged()
@@ -127,7 +133,10 @@ class MainActivity : AppCompatActivity() {
             override fun onClick(p0: View?) {
 //                Log.d("test", "$adapterPosition")
 
-                val memoReadActivity = Intent(baseContext, MemoReadActivity::class.java)
+                val memo_idx = idx_list[adapterPosition]
+//                Log.d("test","${memo_idx}")
+                val memoReadActivity =
+                    Intent(baseContext, MemoReadActivity::class.java).putExtra("memo_idx", memo_idx)
                 startActivity(memoReadActivity)
             }
         }

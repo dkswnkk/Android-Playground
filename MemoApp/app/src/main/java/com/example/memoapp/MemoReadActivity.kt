@@ -1,8 +1,10 @@
 package com.example.memoapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
 import com.example.memoapp.databinding.ActivityMemoReadBinding
 
@@ -43,7 +45,7 @@ class MemoReadActivity : AppCompatActivity() {
         val memo_data = c1.getString(c1.getColumnIndexOrThrow("memo_date"))
         val memo_text = c1.getString(c1.getColumnIndexOrThrow("memo_text"))
         helper.writableDatabase.close()
-        Log.d("test",memo_text)
+        Log.d("test", memo_text)
         binding.memoReadSubject.text = memo_subject
         binding.memoReadDate.text = memo_data
         binding.memoReadText.text = memo_text
@@ -55,7 +57,23 @@ class MemoReadActivity : AppCompatActivity() {
             android.R.id.home -> {
                 finish()
             }
+            R.id.read_modify -> {
+                val memo_idx = intent.getIntExtra("memo_idx", 0)
+                val memoModifyIntent =
+                    Intent(this, MemoModifyActivity::class.java).putExtra("memo_idx", memo_idx)
+                startActivity(memoModifyIntent)
+
+            }
+            R.id.read_delete -> {
+
+            }
+
         }
+        return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.read_memu, menu)
         return true
     }
 }

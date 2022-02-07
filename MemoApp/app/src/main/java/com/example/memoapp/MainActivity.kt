@@ -58,6 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onResume() {
+        Log.d("test","111")
         super.onResume()
 
         subject_list.clear()
@@ -69,7 +70,7 @@ class MainActivity : AppCompatActivity() {
         val sql = """
             select memo_subject, memo_date, memo_idx
             from MemoTable
-            order by memo_idx desc
+            order by memo_date desc
         """.trimIndent()
 
         val c1 = helper.writableDatabase.rawQuery(sql, null)

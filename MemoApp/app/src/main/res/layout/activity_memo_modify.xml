@@ -5,18 +5,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MemoAddActivity">
+    tools:context=".MemoModifyActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/memo_add_toolbar"
+        android:id="@+id/memo_modify_toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#F93F5B"
+        android:background="@color/cursorColor"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
     <EditText
-        android:id="@+id/add_memo_subject"
+        android:id="@+id/modify_memo_subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/cursorColor"
@@ -30,8 +30,12 @@
         android:textCursorDrawable="?android:attr/textCursorDrawable"
         android:textStyle="bold" />
 
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
     <EditText
-        android:id="@+id/add_memo_text"
+        android:id="@+id/modify_memo_text"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:backgroundTint="#F93F5B"
@@ -43,9 +47,4 @@
         android:textColorHighlight="#F93F5B"
         android:textColorLink="#F93F5B"
         android:textStyle="bold" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="10dp" />
-
 </LinearLayout>

@@ -6,6 +6,7 @@ import android.os.SystemClock
 import android.view.Menu
 import android.view.MenuItem
 import android.view.inputmethod.InputMethodManager
+import androidx.appcompat.app.AlertDialog
 import com.example.memoapp.databinding.ActivityMemoModifyBinding
 import java.text.SimpleDateFormat
 import java.util.*
@@ -95,6 +96,7 @@ class MemoModifyActivity : AppCompatActivity() {
                 DBHelper.writableDatabase.close()
                 finish()
             }
+
         }
         return super.onOptionsItemSelected(item)
     }

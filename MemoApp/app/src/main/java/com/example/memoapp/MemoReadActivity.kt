@@ -1,11 +1,13 @@
 package com.example.memoapp
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import androidx.appcompat.app.AlertDialog
 import com.example.memoapp.databinding.ActivityMemoReadBinding
 
 class MemoReadActivity : AppCompatActivity() {
@@ -65,7 +67,23 @@ class MemoReadActivity : AppCompatActivity() {
 
             }
             R.id.read_delete -> {
+                val builder =
+                    AlertDialog.Builder(this).setTitle("삭제").setMessage("메모를 삭제 하시겠습니까?")
+                        .setPositiveButton("확인") { dialogInterface: DialogInterface, i: Int ->
+                            val helper = DBHelper(this)
+                            val sql = """
+                                delete from MemoTable
+                                where memo_idx=?
+                            """.trimIndent()
 
+                            val memo_idx = intent.getIntExtra("memo_idx", 0)
+                            val args = arrayOf(memo_idx.toString())
+
+                            helper.writableDatabase.execSQL(sql, args)
+                            helper.writableDatabase.close()
+                            finish()
+                        }
+                        .setNegativeButton("취소", null).show()
             }
 
         }

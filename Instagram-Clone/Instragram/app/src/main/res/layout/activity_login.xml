@@ -31,7 +31,7 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -44,15 +44,16 @@
             android:layout_height="match_parent">
 
             <EditText
-                android:id="@+id/editTextTextPassword"
+                android:id="@+id/password_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="@string/password" />
+                android:hint="@string/password"
+                android:inputType="textPassword" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/email_login_button"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="50dp"

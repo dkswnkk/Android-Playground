@@ -56,5 +56,8 @@
     <!-- etc -->
     <item name="visible" type="id" />
     <item name="masked" type="id" />
+
+
+    <string name = "firebase_web_client_id_key">1060336428076-2gcmuicelb2r96i1e6ilgdtdij334j8u.apps.googleusercontent.com</string>
 </resources>
 

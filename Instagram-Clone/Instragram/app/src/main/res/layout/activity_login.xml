@@ -80,7 +80,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/google_sign_in_button"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_margin="5dp"
